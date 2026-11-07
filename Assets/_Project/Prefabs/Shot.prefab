@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Shots.Shot
   _collider: {fileID: 6825812086938139107}
+  _visual: {fileID: 7242607095957777409}
   _obstacleMask:
     serializedVersion: 2
     m_Bits: 64

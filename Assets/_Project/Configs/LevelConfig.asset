@@ -16,6 +16,7 @@ MonoBehaviour:
   <FieldLength>k__BackingField: 22
   <StartPosition>k__BackingField: {x: -3.5, y: 0, z: 1}
   <DoorPosition>k__BackingField: {x: 3.5, y: 0, z: 21}
+  <DoorOpenDistance>k__BackingField: 5
   <PathHalfWidth>k__BackingField: 2
   <ClearRadius>k__BackingField: 1.8
   <PathDensity>k__BackingField:

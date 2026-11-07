@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ef9c715186b734baea0975e261c3b6, type: 3}
   m_Name: BallConfig
   m_EditorClassIdentifier: Assembly-CSharp::Game.Player.BallConfig
-  <StartSize>k__BackingField: 2.4
+  <StartSize>k__BackingField: 2.7
+  <CriticalSize>k__BackingField: 0.5
+  <PathWidthPerSize>k__BackingField: 1.25
   <MinShotSize>k__BackingField: 0.15
   <ChargeSpeed>k__BackingField: 0.5
   <ShotSpeed>k__BackingField: 10
   <ShotLifetime>k__BackingField: 4
-  <InfectionRadiusPerSize>k__BackingField: 2.5
+  <InfectionRadiusPerSize>k__BackingField: 8
   <InfectionSpeed>k__BackingField: 8
+  <HopLength>k__BackingField: 1.5
+  <HopDuration>k__BackingField: 0.3
+  <HopHeight>k__BackingField: 0.6
+  <MinHopLength>k__BackingField: 0.25

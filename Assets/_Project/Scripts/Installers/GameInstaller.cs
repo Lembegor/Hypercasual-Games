@@ -1,3 +1,4 @@
+using Game.Core;
 using Game.Input;
 using Game.Level;
 using Game.Player;
@@ -20,8 +21,9 @@ namespace Game.Installers
             Container.BindInstance(_ballConfig);
             Container.BindInstance(_player);
 
+            Container.Bind<GameController>().AsSingle();
             Container.BindInterfacesAndSelfTo<TapInput>().AsSingle();
-            Container.BindInterfacesTo<ShotCharger>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ShotCharger>().AsSingle();
             Container.BindFactory<Shot, Shot.Factory>().FromComponentInNewPrefab(_shotPrefab);
         }
     }

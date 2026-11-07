@@ -12,6 +12,8 @@ namespace Game.Level
 
         private bool _isInfected;
 
+        public float ExplodeDelay => _explodeDelay;
+
         public void Infect(float delay)
         {
             if (_isInfected)

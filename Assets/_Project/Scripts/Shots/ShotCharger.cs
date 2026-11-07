@@ -1,4 +1,5 @@
 using System;
+using Game.Core;
 using Game.Input;
 using Game.Level;
 using Game.Player;
@@ -13,21 +14,28 @@ namespace Game.Shots
         private readonly PlayerBall _player;
         private readonly BallConfig _ballConfig;
         private readonly LevelConfig _levelConfig;
+        private readonly GameController _game;
         private readonly Shot.Factory _shotFactory;
 
         private Shot _shot;
+        private int _activeShots;
+
+        public bool IsCharging => _shot != null;
+        public bool IsBusy => IsCharging || _activeShots > 0;
 
         public ShotCharger(
             TapInput input,
             PlayerBall player,
             BallConfig ballConfig,
             LevelConfig levelConfig,
+            GameController game,
             Shot.Factory shotFactory)
         {
             _input = input;
             _player = player;
             _ballConfig = ballConfig;
             _levelConfig = levelConfig;
+            _game = game;
             _shotFactory = shotFactory;
         }
 
@@ -45,25 +53,33 @@ namespace Game.Shots
 
         public void Tick()
         {
-            if (_shot == null)
-                return;
-
-            Transfer(_ballConfig.ChargeSpeed * Time.deltaTime);
+            if (IsCharging)
+                Transfer(_ballConfig.ChargeSpeed * Time.deltaTime);
         }
 
         private void OnPressed()
         {
+            if (_game.State != GameState.Playing)
+                return;
+
             _shot = _shotFactory.Create();
             Transfer(_ballConfig.MinShotSize);
         }
 
         private void OnReleased()
         {
-            if (_shot == null)
+            if (!IsCharging)
                 return;
 
-            _shot.Launch(GetDirection());
+            _activeShots++;
+            _shot.Finished += OnShotFinished;
+            _shot.Launch(GetDirection(), _player.PathWidth);
             _shot = null;
+        }
+
+        private void OnShotFinished()
+        {
+            _activeShots--;
         }
 
         private void Transfer(float amount)
@@ -71,6 +87,12 @@ namespace Game.Shots
             _player.Shrink(amount);
             _shot.Grow(amount);
             PlaceShot();
+
+            if (_player.IsCritical)
+            {
+                _shot = null;
+                _game.Lose();
+            }
         }
 
         private void PlaceShot()
