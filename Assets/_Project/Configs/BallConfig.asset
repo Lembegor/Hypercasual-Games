@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ef9c715186b734baea0975e261c3b6, type: 3}
   m_Name: BallConfig
   m_EditorClassIdentifier: Assembly-CSharp::Game.Player.BallConfig
-  <StartSize>k__BackingField: 2.7
+  <StartSize>k__BackingField: 2.3
   <CriticalSize>k__BackingField: 0.5
   <PathWidthPerSize>k__BackingField: 1.25
   <MinShotSize>k__BackingField: 0.15

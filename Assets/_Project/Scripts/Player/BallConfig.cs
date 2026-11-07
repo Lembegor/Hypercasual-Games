@@ -6,7 +6,7 @@ namespace Game.Player
     public class BallConfig : ScriptableObject
     {
         [field: Header("Size")]
-        [field: SerializeField] public float StartSize { get; private set; } = 2.7f;
+        [field: SerializeField] public float StartSize { get; private set; } = 2.3f;
         [field: SerializeField] public float CriticalSize { get; private set; } = 0.5f;
         [field: SerializeField] public float PathWidthPerSize { get; private set; } = 1.25f;
 
