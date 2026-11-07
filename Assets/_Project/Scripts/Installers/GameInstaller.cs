@@ -14,9 +14,12 @@ namespace Game.Installers
         [SerializeField] private BallConfig _ballConfig;
         [SerializeField] private PlayerBall _player;
         [SerializeField] private Shot _shotPrefab;
+        [SerializeField] private int _targetFrameRate = 60;
 
         public override void InstallBindings()
         {
+            Application.targetFrameRate = _targetFrameRate;
+
             Container.BindInstance(_levelConfig);
             Container.BindInstance(_ballConfig);
             Container.BindInstance(_player);

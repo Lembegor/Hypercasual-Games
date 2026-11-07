@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -650,6 +651,19 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea104494fc5eb547a007781c872ab88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Core.CameraFitter
+  _referenceAspect: 0.5625
 --- !u!1 &401173325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1348,7 @@ MonoBehaviour:
   _ballConfig: {fileID: 11400000, guid: a682d9b781521754788e09e66d2d7091, type: 2}
   _player: {fileID: 12742731}
   _shotPrefab: {fileID: 1560384915086718435, guid: 7ae62a8ef9397474fafffe20852048d7, type: 3}
+  _targetFrameRate: 60
 --- !u!114 &1118219329
 MonoBehaviour:
   m_ObjectHideFlags: 0
