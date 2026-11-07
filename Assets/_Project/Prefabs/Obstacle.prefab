@@ -136,6 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b8e1860dc6f3642b1199b6d0d0cf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Level.Obstacle
+  _renderer: {fileID: 3797684115319027186}
+  _infectedMaterial: {fileID: 2100000, guid: a7dde21527c666f4fa1638952927f6c7, type: 2}
+  _explosionPrefab: {fileID: 5012177143502965457, guid: 90052db8e2cd93746b1cf3cfb02ce837, type: 3}
+  _explodeDelay: 0.25
 --- !u!136 &157384574218130943
 CapsuleCollider:
   m_ObjectHideFlags: 0
